@@ -14,7 +14,7 @@ HTTP协议   req response
 告诉蜘蛛
 www.xiaomi.com/a.html 
 废弃了，301 www.mi.com/a.html
-3xx区别：永久跳转，告诉蜘蛛把记录更新掉
+301和3xx区别：永久跳转，告诉蜘蛛把记录更新掉
 301 可以在改变状态码，不变，来展示理解
 http://localhost:3000 301永久跳转
 再次访问，浏览器有缓存，不需要再走服务器
