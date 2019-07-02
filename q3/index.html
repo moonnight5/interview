@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- js中的浅拷贝和深拷贝 -->
+  <!-- <script>
+    // 解构
+    function example() {
+      return [1,2,3]
+    }
+    // let b = example()[1]
+    // console.log(b)            es5
+    let [a,b,c] = example()
+    console.log(a)
+    let [x,y] = [1,2]
+    // 对象的解构
+    // let {foo,bar} = {foo:"aaa",bar:"bbb"}
+    let {foo:baz} = {foo: "abc"}
+    // console.log(foo)
+    console.log(baz)
+  </script> -->
+  <script>
+    // 浅拷贝
+    let obj = {
+      name: 'liu',
+      age: 22,
+      like: ['sing','dance']
+    }
+    // let obj2 = Object.assign({},obj)
+    // // let obj3 = Object.assign(obj2,like)
+    // let obj3 = {...obj}
+    // obj.name = 'liu2'
+    // obj.like.push('rap')
+    // console.log(obj2)
+    // console.log(obj3)
+    // -------------------------------------------------------------------- 
+    // 深拷贝
+    let obj4 = JSON.parse(JSON.stringify(obj))
+    obj.name = 'liu3'
+    obj.like.push('rap')
+    console.log(obj4)
+  </script>
+</body>
+</html>
