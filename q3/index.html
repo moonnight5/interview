@@ -57,7 +57,7 @@
         return Date(obj)
       }
       // 如果不是复杂的数据类型，直接返回
-      if (obj === null || typeof obj === 'object') {
+      if (obj === null || typeof obj !== 'object') {
         return obj
       }
       // 该对象有原有对象的键值
