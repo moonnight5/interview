@@ -31,3 +31,67 @@
    1. 能够访问函数定义是所在的词法作用域(阻止其被回收)
    2. 私有化变量
    3. 模拟块级作用域
+
+# q5.  数组去重
+  1. es6 里面的Set 方法 函数体：
+     ```js
+    function uniq(arr) {
+      return [...new Set(arr)] 
+    }
+    ```
+  2. 使用indexOf方法  查找下标，如果同样的值能找到下标就不放进新的数组
+    ```js
+    function uniq(arr) {
+      let res = []
+      for (let i = 0; i < arr.length; i++) {
+        if (res.indexOf(arr[i]) === -1) {
+          res.push(arr[i])
+        }
+      }
+      return res
+    }
+    ```
+  3. includes
+    ```js
+    function uniq(arr){
+      let result = []
+      for(let i=0;i<arr.length;i++){
+        if(!result.includes(arr[i])){
+          result.push(arr[i])
+        }
+      }
+      return result
+    }
+    ```
+  4. 使用map方法
+    ```js
+    function uniq(arr) {
+      let map = new Map()
+      let res = new Array()
+      for ( let i = 0; i < arr.length; i++) {
+        //map.has()返回一个bool值，用来表明map 中是否存在指定元素.
+        if (map.has(arr[i])) {
+          //吧arr[i]都push进去（key，value）
+          map.set(arr[i],true)
+        } else {
+          map.set(arr[i],false)
+          res.push(arr[i])
+        }
+      }
+      return res
+    }
+    ```
+  5. 使用reduce
+    ```js
+    function uniq(arr) {
+      return arr.reduce((prev,cur) => 
+        prev.includes(cur) ? prev : [...prev,cur],[]
+      )
+    }
+    ```
+
+# q6.  防抖节流函数原理
+
+# q7.  __proto__ 和 prototype 关联
+  __proto__是每一个实例都有的属性，可以访问[prototype]属性，实例的__proto__与其构造函数的prototype指向的是同一个对象
+      
