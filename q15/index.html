@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- <script>
+    //['1','2','3'].map(parseInt)   输出 [1,NaN,NaN]
+    var str = '123';
+    var numberStr = parseInt(str)
+    var get = new Promise((resolve,reject)=>{
+      setTimeout(()=>{
+        resolve(666)
+      },3000)
+    })
+
+    // get.then(res=>{
+    //   console.log(res)
+    // })
+
+    // get.then(console.log)
+    /*get.then(callback) // 1
+    function callback (a, b, c) {
+      console.log(a, b, c)
+    }
+    1 的写法 和 2 的写法其实是等价的
+    get.then((a, b, c) => { //2
+      console.log(a, b, c)
+    })*/
+  </script> -->
+  <script>
+    //['1','2','3'].map(parseInt)   输出 [1,NaN,NaN]
+    /* 为什么会输出 [1,NaN,NaN] 是因为它是如下运行的
+     parseInt('1',0)
+     parseInt('2',1)
+     parseInt('3',2)*/
+    var str = '123';
+    ['1', '2', '3'].map(callback)
+    // parseInt(string,radix)  第一个参数是传进来的字符串，第二个参数是进制，默认十进制
+    var numberStr = parseInt(str)
+    var get = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(666)
+      }, 3000)
+    })
+    function callback(a, b) {
+      console.log(a, b)
+    }
+
+  </script>
+</body>
+
+</html>
