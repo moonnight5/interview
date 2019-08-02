@@ -100,6 +100,17 @@
   post不同，post一般做的是修改和删除数据的工作，所以必须与数据库交互，所以不能使用缓存
   因此，get请求更适合于请求缓存
   ##自行补充其他区别
+  [https://www.cnblogs.com/logsharing/p/8448446.html]
+
+# q9. 一个页面从输入URL到页面加载显示完成，这个过程发生了什么
+  1. 浏览器的地址栏输入URL并按下回车。
+  2. 浏览器查找当前URL是否存在缓存，并比较缓存是否过期。
+  3. DNS解析URL对应的IP。
+  4. 根据IP建立TCP连接（三次握手）。
+  5. HTTP发起请求。
+  6. 服务器处理请求，浏览器接收HTTP响应。
+  7. 渲染页面，构建DOM树。
+  8. 关闭TCP连接（四次挥手）
 
 # q12. url长度限制
   http协议并没有限制URL的长度，是浏览器或者web浏览器做了URL长度的限制，并且只针对于请求做的限制
@@ -141,7 +152,23 @@
   scrollHeight：表示所有区域的高度，包含因为滚动被隐藏的部分
   clientTop：表示边框border的厚度，在未指定的情况下一般为0
   scrollTop：表示滚动后被隐藏的高度，
-  https://blog.csdn.net/qq_33036599/article/details/81224346
+  [https://blog.csdn.net/qq_33036599/article/details/81224346]
 
-# q17 js拖拽功能的实现
+# q17. js拖拽功能的实现
+  pageX
 
+# q18. 类的创建和继承
+
+# q19. click在iOS手机上有300ms延迟，原因及解决方法
+  原因：判断是否要双击放大
+  解决方法：
+   1. <meta name="viewport" content="width=device-width, initial-scale=no">
+   2. FastClick,其原理是检测到touchend事件，立刻发出模拟click事件，并把浏览器300ms之后真实发出的事件阻断
+
+# q20. Cookie sessionStorage localStorage的区别
+  Cookie: 数据始终在同源的http请求中携带(即使不需要)，即cookie在浏览器和服务器之间来回传递，而sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存。cookie还有路径(path)概念，可以限制cookie只属于某个路径下，
+  存储大小只有4k左右。
+
+  sessionStorage：仅在当前浏览器窗口关闭前有效，不能长久保存。
+
+  localStorage：在所有的同源窗口都是共享的，cookie也是在所有同源窗口共享的，localStorage的大小在5M左右。
